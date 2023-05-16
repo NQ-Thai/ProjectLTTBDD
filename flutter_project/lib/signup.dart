@@ -1,16 +1,14 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_project/signup.dart';
-import 'package:flutter_project/trangchu.dart';
+import 'package:flutter_project/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Signup extends StatefulWidget {
+  const Signup({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   bool _hidePassword = true;
   IconData icon = Icons.visibility;
   @override
@@ -21,13 +19,21 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Đăng nhập", style: TextStyle(fontSize: 34),),
-            const SizedBox(height: 25),
+            const Text('Đăng kí', style: TextStyle(fontSize: 34),),
+            const SizedBox(height: 16),
             const TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Tên tài khoản',
+                labelText: 'Nhập số điện thoại',
+              ),
+            ),
+            const SizedBox(height: 16),
+            const TextField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Nhập tên tài khoản',
               ),
             ),
             const SizedBox(height: 16),
@@ -49,27 +55,32 @@ class _LoginState extends State<Login> {
               ),
             ),
             const SizedBox(height: 16),
-            ElevatedButton(onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                context, 
-                MaterialPageRoute(
-                  builder: (context) => const Trangchu(),
+            TextField(
+              obscureText: _hidePassword,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: 'Nhập lại mật khẩu',
+                suffixIcon: IconButton(onPressed: () {
+                  setState(() {
+                  _hidePassword = !_hidePassword;
+                  icon = _hidePassword ? Icons.visibility : Icons.visibility_off; 
+                  });
+                }, 
+                icon: Icon(icon),
                 ),
-                (route) => false);
-            }, 
-            child: const Text("Đăng nhập")),
-            const SizedBox(height: 25),
-            const Text("Chưa có tài khoản?", style: TextStyle(fontSize: 15),),
+              ),
+            ),
             const SizedBox(height: 16),
             ElevatedButton(onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context, 
                 MaterialPageRoute(
-                  builder: (context) => const Signup(),
+                  builder: (context) => const Login(),
                 ),
                 (route) => false);
             }, 
-            child: const Text("Đăng kí tài khoản")),
+            child:const Text("Đăng kí"))
           ],
         ),
       ),
