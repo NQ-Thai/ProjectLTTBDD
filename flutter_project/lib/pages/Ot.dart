@@ -106,7 +106,7 @@ class _OtState extends State<Ot> {
                         ],
                       ),
                     ),
-                    const Row(
+                    Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 30),
@@ -120,7 +120,7 @@ class _OtState extends State<Ot> {
                         ),
                       ],
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

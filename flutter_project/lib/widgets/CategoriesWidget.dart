@@ -12,8 +12,8 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+        Padding(
+          padding: EdgeInsets.only(left: 24, right: 10, bottom: 10, top: 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -34,11 +34,10 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // for (int i = 1; i < 8; i++)
-                Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 50,
-                  decoration:  BoxDecoration(
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                height: 50,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
@@ -48,34 +47,33 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         blurRadius: 6,
                       ),
                     ]),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          "images/1.png",
-                          height: 50,
-                          width: 50,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        "images/1.png",
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Dâu tây",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "Dâu tây",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 50,
-                  decoration:  BoxDecoration(
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                height: 50,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
@@ -85,34 +83,33 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         blurRadius: 6,
                       ),
                     ]),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          "images/2.png",
-                          height: 50,
-                          width: 50,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        "images/2.png",
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Cam",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "Cam",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 50,
-                  decoration:  BoxDecoration(
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                height: 50,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
@@ -122,34 +119,33 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         blurRadius: 6,
                       ),
                     ]),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          "images/3.png",
-                          height: 50,
-                          width: 50,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        "images/3.png",
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Bánh Kem",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "Bánh Kem",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 50,
-                  decoration:  BoxDecoration(
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                height: 50,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
@@ -159,34 +155,33 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         blurRadius: 6,
                       ),
                     ]),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          "images/4.png",
-                          height: 50,
-                          width: 50,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        "images/4.png",
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Ớt",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "Ớt",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 50,
-                  decoration:  BoxDecoration(
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                height: 50,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                     boxShadow: [
@@ -196,32 +191,31 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         blurRadius: 6,
                       ),
                     ]),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          "images/5.png",
-                          height: 50,
-                          width: 50,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        "images/5.png",
+                        height: 50,
+                        width: 50,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Cà chua",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Text(
-                          "Cà chua",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ),
             ],
           ),
-          
         )
       ],
     );

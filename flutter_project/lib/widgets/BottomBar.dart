@@ -23,33 +23,36 @@ class _BottomBarState extends State<BottomBar> {
             const Text(
               "\$120",
               style: TextStyle(
-                fontSize: 25, 
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 236, 143, 77),),
+                color: Color.fromARGB(255, 236, 143, 77),
+              ),
             ),
             InkWell(
               onTap: () {},
               child: Container(
-                padding: const  EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 241, 132, 55),
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: const Row(
+                child: Row(
                   children: [
                     Icon(
-                      Icons.add_shopping_cart, 
+                      Icons.add_shopping_cart,
                       color: Colors.white,
                       size: 28,
                     ),
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       "Thêm vào giỏ hàng",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                      ),
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
