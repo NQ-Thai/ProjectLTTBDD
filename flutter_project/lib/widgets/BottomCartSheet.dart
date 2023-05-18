@@ -13,7 +13,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        padding: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 20), 
         height: 500,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
