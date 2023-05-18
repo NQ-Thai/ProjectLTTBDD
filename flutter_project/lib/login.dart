@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project/signup.dart';
-import 'package:flutter_project/trangchu.dart';
+import 'package:flutter_project/homePage.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -49,27 +49,59 @@ class _LoginState extends State<Login> {
               ),
             ),
             const SizedBox(height: 16),
-            ElevatedButton(onPressed: () {
-              Navigator.pushAndRemoveUntil(
+            InkWell(
+              onTap: () {
+                 Navigator.pushAndRemoveUntil(
                 context, 
                 MaterialPageRoute(
-                  builder: (context) => const Trangchu(),
+                  builder: (context) => const HomePage(),
                 ),
                 (route) => false);
-            }, 
-            child: const Text("Đăng nhập")),
-            const SizedBox(height: 25),
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color.fromARGB(255, 236, 143, 77),
+                ),
+                child: const Text(
+                  "Đăng nhập",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
             const Text("Chưa có tài khoản?", style: TextStyle(fontSize: 15),),
-            const SizedBox(height: 16),
-            ElevatedButton(onPressed: () {
-              Navigator.pushAndRemoveUntil(
+            const SizedBox(height: 20),
+            InkWell(
+              onTap: () {
+                 Navigator.pushAndRemoveUntil(
                 context, 
                 MaterialPageRoute(
                   builder: (context) => const Signup(),
                 ),
                 (route) => false);
-            }, 
-            child: const Text("Đăng kí tài khoản")),
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color.fromARGB(255, 236, 143, 77),
+                ),
+                child: const Text(
+                  "Đăng kí",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/login.dart';
-import 'package:flutter_project/signup.dart';
+import 'package:flutter_project/pages/startScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,17 +16,17 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text("Cửa hàng"),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.settings),
-                )
-              ],
-            ),
-            body:const Login(),
+        home: const Scaffold(
+            // appBar: AppBar(
+            //   title: const Text("Cửa hàng"),
+            //   actions: [
+            //     IconButton(
+            //       onPressed: () {},
+            //       icon: const Icon(Icons.settings),
+            //     )
+            //   ],
+            // ),
+            body: StartScreen(),
             
             )
             );
