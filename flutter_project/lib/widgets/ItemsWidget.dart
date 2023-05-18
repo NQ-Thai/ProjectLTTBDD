@@ -73,7 +73,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                       child: Container(
                         margin: const EdgeInsets.all(10),
                         child: Image.asset(
-                          "images/$i.png",
+                          "images/$i.png", 
                           height: 85,
                           width: 85,
                         ),
