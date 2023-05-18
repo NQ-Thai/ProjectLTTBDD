@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/homePage.dart';
 import 'package:flutter_project/widgets/BottomBar.dart';
 
-class ItemPage extends StatefulWidget {
-  const ItemPage({Key? key}) : super(key: key);
+class Ot extends StatefulWidget {
+  const Ot({Key? key}) : super(key: key);
 
   @override
-  State<ItemPage> createState() => _ItemPageState();
+  State<Ot> createState() => _OtState();
 }
 
-class _ItemPageState extends State<ItemPage> {
+class _OtState extends State<Ot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _ItemPageState extends State<ItemPage> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/1.png"),
+                    image: AssetImage("images/4.png"),
                   ),
                 ),
                 child: InkWell(
@@ -64,7 +64,7 @@ class _ItemPageState extends State<ItemPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            "Dâu tây",
+                            "Ớt",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 28,
@@ -135,7 +135,7 @@ class _ItemPageState extends State<ItemPage> {
                           ),
                           SizedBox(height: 10),
                           Text(
-                            "Dâu tươi được trồng tại Đà Lạt. Thơm ngon chua ngọt.",
+                            "Ớt tươi được trồng tại Đà Lạt. Thơm ngon cay.",
                             style: TextStyle(color: Colors.white, fontSize: 17),
                             textAlign: TextAlign.justify,
                           ),

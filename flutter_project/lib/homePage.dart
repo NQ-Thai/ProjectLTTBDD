@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                 child: const Column(
                   children: [
                     Text(
-                      "Welcome",
+                      "Chào mừng",
                       style: TextStyle(
                         fontSize: 35,
                         color: Colors.white,
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Text(
-                      "What do you want to Buy?",
+                      "Bạn muốn mua gì nào",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ],
@@ -124,13 +124,11 @@ class _HomePageState extends State<HomePage> {
                       width: 250,
                       child: TextFormField(
                         decoration: const InputDecoration(
-                          hintText: "Search here",
+                          hintText: "Tìm kiếm ở đây",
                           border: InputBorder.none,
                         ),
                       ),
                     ),
-                    const Spacer(),
-                    const Icon(Icons.filter_list)
                   ],
                 ),
               ),

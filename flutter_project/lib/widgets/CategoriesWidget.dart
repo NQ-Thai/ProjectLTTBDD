@@ -18,21 +18,13 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Category",
+                "Sản phẩm của tuần",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 236, 143, 77),
                 ),
               ),
-              Text(
-                "See all",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                ),
-              )
             ],
           ),
         ),
@@ -41,7 +33,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
           child: Row(
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              for (int i = 1; i < 8; i++)
+              // for (int i = 1; i < 8; i++)
                 Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -61,7 +53,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                       Padding(
                         padding: const EdgeInsets.all(5),
                         child: Image.asset(
-                          "images/$i.png",
+                          "images/1.png",
                           height: 50,
                           width: 50,
                         ),
@@ -69,7 +61,155 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                       const Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: Text(
-                          "Category",
+                          "Dâu tây",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  height: 50,
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 6,
+                      ),
+                    ]),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Image.asset(
+                          "images/2.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Text(
+                          "Cam",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  height: 50,
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 6,
+                      ),
+                    ]),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Image.asset(
+                          "images/3.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Text(
+                          "Bánh Kem",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  height: 50,
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 6,
+                      ),
+                    ]),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Image.asset(
+                          "images/4.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Text(
+                          "Ớt",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  height: 50,
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 6,
+                      ),
+                    ]),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Image.asset(
+                          "images/5.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Text(
+                          "Cà chua",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -81,6 +221,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                 ),
             ],
           ),
+          
         )
       ],
     );

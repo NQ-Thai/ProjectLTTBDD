@@ -18,21 +18,13 @@ class _PopularItemWidgetState extends State<PopularItemWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Popular",
+                "Hình ảnh sản phẩm",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 236, 143, 77),
                 ),
               ),
-              Text(
-                "See all",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                ),
-              )
             ],
           ),
         ),

@@ -55,7 +55,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                                   bottom: 15,
                                 ),
                                 child: const Text(
-                                  "Item Title",
+                                  "Giá tiền",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 236, 143, 77),
                                     fontSize: 22,
@@ -138,8 +138,8 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                      padding: EdgeInsets.all(15),
+                      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      padding:const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -153,35 +153,12 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                       ),
                       child: const Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Delivery Fee: ",
-                                style:  TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 236, 143, 77),
-
-                                ),
-                              ),
-                              Text(
-                                "\$10",
-                                style:  TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 236, 143, 77),
-
-                                ),
-                              ),
-                            ],
-                          ),
                           SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Sub-Total: ",
+                                "Tổng tiền: ",
                                 style:  TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -190,7 +167,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                                 ),
                               ),
                               Text(
-                                "\$10",
+                                "\$40",
                                 style:  TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -225,7 +202,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "\$20", 
+                    "\$40", 
                     style: TextStyle(
                       color: Color.fromARGB(255, 236, 143, 77),
                       fontWeight: FontWeight.bold,
@@ -241,7 +218,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                           color:const Color.fromARGB(255, 236, 143, 77),
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Text("Check Out", style:  TextStyle(
+                        child: const Text("Kiểm tra", style:  TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold
@@ -250,7 +227,7 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                     )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

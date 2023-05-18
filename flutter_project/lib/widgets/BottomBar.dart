@@ -44,7 +44,7 @@ class _BottomBarState extends State<BottomBar> {
                     ),
                     SizedBox(width: 5,),
                     Text(
-                      "Add to Cart",
+                      "Thêm vào giỏ hàng",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

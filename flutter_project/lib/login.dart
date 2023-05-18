@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_project/signup.dart';
 import 'package:flutter_project/homePage.dart';
@@ -20,10 +21,7 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Đăng nhập",
-              style: TextStyle(fontSize: 34),
-            ),
+            const Text("Đăng nhập", style: TextStyle(fontSize: 34),),
             const SizedBox(height: 25),
             const TextField(
               keyboardType: TextInputType.emailAddress,
@@ -40,21 +38,17 @@ class _LoginState extends State<Login> {
                 border: const OutlineInputBorder(),
                 labelText: 'Mật khẩu',
                 hintText: 'Nhập mật khẩu',
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _hidePassword = !_hidePassword;
-                      icon = _hidePassword
-                          ? Icons.visibility
-                          : Icons.visibility_off;
-                    });
-                  },
-                  icon: Icon(icon),
+                suffixIcon: IconButton(onPressed: () {
+                  setState(() {
+                  _hidePassword = !_hidePassword;
+                  icon = _hidePassword ? Icons.visibility : Icons.visibility_off; 
+                  });
+                }, 
+                icon: Icon(icon),
                 ),
               ),
             ),
             const SizedBox(height: 16),
-<<<<<<< HEAD
             InkWell(
               onTap: () {
                  Navigator.pushAndRemoveUntil(
@@ -108,34 +102,6 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-=======
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Trangchu(),
-                      ),
-                      (route) => false);
-                },
-                child: const Text("Đăng nhập")),
-            const SizedBox(height: 25),
-            const Text(
-              "Chưa có tài khoản?",
-              style: TextStyle(fontSize: 15),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Signup(),
-                      ),
-                      (route) => false);
-                },
-                child: const Text("Đăng kí tài khoản. ")),
->>>>>>> 7b742138f79a852d79ff496ceae11aaf08bf6175
           ],
         ),
       ),
