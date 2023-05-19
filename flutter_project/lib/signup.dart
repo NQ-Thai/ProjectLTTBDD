@@ -19,7 +19,7 @@ class _SignupState extends State<Signup> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Đăng kí', style: TextStyle(fontSize: 34),),
+            const Text('Đăng kí', style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 236, 143, 77)), ),
             const SizedBox(height: 16),
             const TextField(
               keyboardType: TextInputType.emailAddress,
@@ -72,15 +72,32 @@ class _SignupState extends State<Signup> {
               ),
             ),
             const SizedBox(height: 16),
-            ElevatedButton(onPressed: () {
-              Navigator.pushAndRemoveUntil(
+            const SizedBox(height: 20),
+            InkWell(
+              onTap: () {
+                 Navigator.pushAndRemoveUntil(
                 context, 
                 MaterialPageRoute(
                   builder: (context) => const Login(),
                 ),
                 (route) => false);
-            }, 
-            child:const Text("Đăng kí"))
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color.fromARGB(255, 236, 143, 77),
+                ),
+                child: const Text(
+                  "Đăng kí",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ],
         ),
       ),

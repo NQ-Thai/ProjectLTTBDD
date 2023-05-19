@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Đăng nhập", style: TextStyle(fontSize: 34),),
+            const Text("Đăng nhập", style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 236, 143, 77)),),
             const SizedBox(height: 25),
             const TextField(
               keyboardType: TextInputType.emailAddress,
