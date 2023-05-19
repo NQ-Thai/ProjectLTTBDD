@@ -18,7 +18,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(24), 
-        child: Column(
+        child: Column( 
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Đăng nhập", style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 236, 143, 77)),),
