@@ -49,15 +49,15 @@ class _HomePageState extends State<HomePage> {
                       size: 30,
                     ),
                     Container(
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 236, 143, 77),
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.white.withOpacity(0.5),
-                              blurRadius: 2,
-                            ),
-                          ]),
+                      // decoration: BoxDecoration(
+                      //     color: const Color.fromARGB(255, 236, 143, 77),
+                      //     borderRadius: BorderRadius.circular(),
+                      //     boxShadow: [
+                      //       BoxShadow(
+                      //         color: Colors.white.withOpacity(0.5),
+                      //         blurRadius: 2,
+                      //       ),
+                      //     ]),
                       child: badges.Badge(
                         badgeStyle: const badges.BadgeStyle(
                           badgeColor: Colors.red,
@@ -69,17 +69,14 @@ class _HomePageState extends State<HomePage> {
                         child: InkWell(
                           onTap: () {
                             showModalBottomSheet(
-                              context: context, 
-                              builder: (BuildContext context) {
-                                return const BottomCartSheet(
-                                  
-                                );
-                                
-                              });
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return const BottomCartSheet();
+                                });
                           },
                           child: const Icon(
                             CupertinoIcons.cart,
-                            size: 30,
+                            size: 35,
                             color: Colors.white,
                           ),
                         ),
@@ -90,8 +87,8 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: const Column(
+                padding: const EdgeInsets.only(top: 10, left: 15),
+                child: Column(
                   children: [
                     Text(
                       "Chào mừng",
@@ -140,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     )),
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CategoriesWidget(),

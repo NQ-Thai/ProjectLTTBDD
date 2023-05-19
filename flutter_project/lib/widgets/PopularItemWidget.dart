@@ -12,7 +12,7 @@ class _PopularItemWidgetState extends State<PopularItemWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(left: 10, right: 10, top: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,15 +39,14 @@ class _PopularItemWidgetState extends State<PopularItemWidget> {
                   height: 100,
                   width: 150,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 8
-                      ),
-                  ]),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 8),
+                      ]),
                   child: Image.asset("images/$i.png"),
                 )
             ],

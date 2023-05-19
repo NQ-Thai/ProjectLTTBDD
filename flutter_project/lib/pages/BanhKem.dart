@@ -106,7 +106,7 @@ class _BanhKemState extends State<BanhKem> {
                         ],
                       ),
                     ),
-                    const Row(
+                    Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 30),
@@ -120,7 +120,7 @@ class _BanhKemState extends State<BanhKem> {
                         ),
                       ],
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
