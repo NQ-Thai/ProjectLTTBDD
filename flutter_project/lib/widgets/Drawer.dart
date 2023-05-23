@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/login.dart';
 import 'package:page_transition/page_transition.dart';
 
 class Drawerr extends StatefulWidget {
@@ -28,32 +29,49 @@ class _Drawerr extends State<Drawerr> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.pink),
-            child: Text(
-              'Drawheader',
-              textScaleFactor: 1.5,
-              style: TextStyle(color: Colors.black),
-            ),
+            decoration: BoxDecoration(color: Color.fromARGB(255, 236, 143, 77)),
+            child:
+              
+             Center(
+              
+               child: Column(
+
+                 children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage:AssetImage('images/startScreenn.png'),
+                    backgroundColor: Color.fromARGB(255, 236, 143, 77) ,
+                  ),
+                  SizedBox(height: 20,),
+                   Text(
+                    'Cửa hàng online',
+                    textScaleFactor: 1.5,
+                    style: TextStyle(color: Colors.white),
+                             ),
+                 ],
+               ),
+             ),
           ),
+
           ListTile(
-            leading: const Icon(Icons.message),
-            title: const Text('home'),
+            leading: const Icon(Icons.account_circle, color: Color.fromARGB(255, 236, 143, 77)),
+            title: const Text('Người dùng'),
             onTap: () {
-              // _showcreen(context, gridview1());
+              // _showcreen(context, ...());
             },
           ),
           ListTile(
-            leading: const Icon(Icons.account_circle),
-            title: const Text('major'),
+            leading: const Icon(Icons.settings, color: Color.fromARGB(255, 236, 143, 77)),
+            title: const Text('Cài đặt'),
             onTap: () {
-              // _showcreen(context, gridview2());
+              // _showcreen(context, ...());
             },
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('setting'),
+            leading: const Icon(Icons.logout, color: Color.fromARGB(255, 236, 143, 77)),
+            title: const Text('Đăng xuất'),
             onTap: () {
-              // _showcreen(context, gridview3());
+              _showcreen(context, const Login());
             },
           ),
         ],

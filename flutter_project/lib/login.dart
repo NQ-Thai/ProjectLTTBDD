@@ -18,12 +18,13 @@ class _LoginState extends State<Login> {
       body: Container(
         padding: const EdgeInsets.all(24),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Image.asset("images/startScreenn.png", height: 100),
             const Text(
               "Đăng nhập",
               style: TextStyle(
-                  fontSize: 34, color: Color.fromARGB(255, 236, 143, 77)),
+                  fontSize: 31, color: Color.fromARGB(255, 236, 143, 77)),
             ),
             const SizedBox(height: 25),
             const TextField(
@@ -33,7 +34,7 @@ class _LoginState extends State<Login> {
                 labelText: 'Tên tài khoản',
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             TextField(
               obscureText: _hidePassword,
               keyboardType: TextInputType.emailAddress,
@@ -54,7 +55,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             InkWell(
               onTap: () {
                 Navigator.pushAndRemoveUntil(
@@ -66,7 +67,7 @@ class _LoginState extends State<Login> {
               },
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: const Color.fromARGB(255, 236, 143, 77),
@@ -75,12 +76,12 @@ class _LoginState extends State<Login> {
                   "Đăng nhập",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             const Text(
               "Chưa có tài khoản?",
               style: TextStyle(fontSize: 15),
@@ -97,7 +98,7 @@ class _LoginState extends State<Login> {
               },
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: const Color.fromARGB(255, 236, 143, 77),

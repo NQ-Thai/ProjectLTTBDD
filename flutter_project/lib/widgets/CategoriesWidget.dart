@@ -12,7 +12,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 24, right: 10, bottom: 10, top: 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

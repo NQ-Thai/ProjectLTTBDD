@@ -19,6 +19,7 @@ class _SignupState extends State<Signup> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Image.asset("images/startScreenn.png", height: 100),
             const Text('Đăng kí', style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 236, 143, 77)), ),
             const SizedBox(height: 16),
             const TextField(

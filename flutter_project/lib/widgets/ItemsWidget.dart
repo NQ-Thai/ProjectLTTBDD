@@ -17,7 +17,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,7 +114,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                               color: Colors.white,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   )
