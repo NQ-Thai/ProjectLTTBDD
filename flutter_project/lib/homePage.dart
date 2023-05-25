@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
-              backgroundColor: Color.fromARGB(255, 236, 143, 77),
+              backgroundColor: const Color.fromARGB(255, 236, 143, 77),
               actions: [
                 Center(
                  
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-      drawer: Drawerr(),
+      drawer: const Drawerr(),
       backgroundColor: const Color.fromARGB(255, 236, 143, 77),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 padding: const EdgeInsets.only(right: 20, left: 15, top: 10),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     
@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CategoriesWidget(),
-                    PopularItemWidget(),
+                    // PopularItemWidget(),
                     ItemsWidget(),
                   ],
                 ),
