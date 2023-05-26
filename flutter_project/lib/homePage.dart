@@ -1,10 +1,9 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/widgets/BottomCartSheet.dart';
 import 'package:flutter_project/widgets/CategoriesWidget.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter_project/widgets/Drawer.dart';
-import 'package:flutter_project/widgets/PopularItemWidget.dart';
 import 'package:flutter_project/widgets/ItemsWidget.dart';
 
 class HomePage extends StatefulWidget {
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                     Text(
                       "Chào mừng",
                       style: TextStyle(
-                        fontSize: 35,
+                        fontSize: 35,   
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),

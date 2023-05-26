@@ -1,15 +1,24 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/signup.dart';
-import 'package:flutter_project/homePage.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
-
+  final Function() ? onTap;
+   const Login({ required this.onTap});
   @override
   State<Login> createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   bool _hidePassword = true;
   IconData icon = Icons.visibility;
   @override
@@ -27,15 +36,18 @@ class _LoginState extends State<Login> {
                   fontSize: 31, color: Color.fromARGB(255, 236, 143, 77)),
             ),
             const SizedBox(height: 25),
-            const TextField(
+            TextField(
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Tên tài khoản',
+                hintText: 'Nhập tài khoản',
               ),
             ),
             const SizedBox(height: 10),
             TextField(
+              controller: passwordController,
               obscureText: _hidePassword,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -58,12 +70,15 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 10),
             InkWell(
               onTap: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomePage(),
-                    ),
-                    (route) => false);
+                // Navigator.pushAndRemoveUntil(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const HomePage(),
+                //     ),
+                //     (route) => false);
+                FirebaseAuth.instance.signInWithEmailAndPassword(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim());
               },
               child: Container(
                 padding:
@@ -89,13 +104,16 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 20),
             InkWell(
               onTap: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Signup(),
-                    ),
-                    (route) => false);
-              },
+              //   Navigator.pushAndRemoveUntil(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => const Signup(),
+              //       ),
+              //       (route) => false);
+              //   // FirebaseAuth.instance.createUserWithEmailAndPassword(
+              //   //   email: emailController.text.trim(), 
+              //   //   password: passwordController.text.trim());
+               },
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
