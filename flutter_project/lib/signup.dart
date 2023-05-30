@@ -1,12 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/my_button.dart';
+
 
 class Signup extends StatefulWidget {
-   final Function() ? onTap;
-  const Signup({ required this.onTap});
-
-  
+  const Signup({Key? key}) : super(key: key);
 
   @override
   State<Signup> createState() => _SignupState();
@@ -64,6 +61,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -106,7 +104,6 @@ class _SignupState extends State<Signup> {
                 ),
               ),
             ),
-          MyButton(onTap: signUserUp, text: 'đăng ký'),
             const SizedBox(height: 16),
             const SizedBox(height: 20),
             // InkWell(
