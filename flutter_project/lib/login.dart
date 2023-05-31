@@ -5,7 +5,9 @@ import 'package:flutter_project/components/my_textfield.dart';
 import 'package:flutter_project/components/square_title.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+  final Function()? onTap;
+
+  const Login({Key? key, required this.onTap}) : super(key: key);
 
   
 
@@ -92,6 +94,7 @@ class _LoginState extends State<Login> {
                 const Icon(
                   Icons.lock,
                   size: 100,
+                  color: Color.fromARGB(255, 236, 143, 77),
                 ),
                 const SizedBox(height: 50),
                 Text(
@@ -131,6 +134,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 25),
           
                 MyButton(
+                  text: "Đăng nhập",
                   onTap: signUserIn,
                 ),
           
@@ -184,11 +188,14 @@ class _LoginState extends State<Login> {
                     Text('Not a member?',
                     style:  TextStyle(color: Colors.blueGrey[700]),),
                     const SizedBox(width: 4),
-                    const Text(
-                      'Register now',
-                      style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
-                      ),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: const Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+                        ),
+                    ),
                   ],
                 )
           

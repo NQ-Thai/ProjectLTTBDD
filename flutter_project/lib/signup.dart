@@ -1,16 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_project/components/my_button.dart';
+import 'package:flutter_project/components/my_textfield.dart';
+import 'package:flutter_project/components/square_title.dart';
 
 class Signup extends StatefulWidget {
-  const Signup({Key? key}) : super(key: key);
+  final Function()? onTap;
+
+  const Signup({Key? key, required this.onTap}) : super(key: key);
 
   @override
   State<Signup> createState() => _SignupState();
 }
 
 class _SignupState extends State<Signup> {
-  // sign user up method
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+
   void signUserUp() async {
     showDialog(
       context: context,
@@ -20,13 +28,17 @@ class _SignupState extends State<Signup> {
         );
       },
     );
+
     try {
-      if (passwordController.text == passwordController.text) {
+      if (passwordController.text == confirmPasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
-            email: emailController.text, password: passwordController.text);
+            email: emailController.text,
+            password: passwordController.text,
+        );
       } else {
-        showErrorMessage("Password don't match!");
+        showErrorMessage("Mật khẩu không đúng!");
       }
+
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
@@ -34,13 +46,12 @@ class _SignupState extends State<Signup> {
     }
   }
 
-// thông báo sai email password
   void showErrorMessage(String message) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: const Color.fromARGB(255, 236, 143, 77),
           title: Center(
             child: Text(
               message,
@@ -51,84 +62,147 @@ class _SignupState extends State<Signup> {
       },
     );
   }
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
 
-  
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color.fromARGB(255, 236, 143, 77),
+          title: Center(
+            child: Text(
+              'Sai Mật Khẩu',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      },
+    );
+  }
 
-  bool _hidePassword = true;
-  IconData icon = Icons.visibility;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: Container(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Image.asset("images/startScreenn.png", height: 100),
-            const Text(
-              'Đăng kí',
-              style: TextStyle(
-                  fontSize: 40, color: Color.fromARGB(255, 236, 143, 77)),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Nhập tên tài khoản',
-              ),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: passwordController,
-              obscureText: _hidePassword,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                labelText: 'Mật khẩu',
-                hintText: 'Nhập mật khẩu',
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _hidePassword = !_hidePassword;
-                      icon = _hidePassword
-                          ? Icons.visibility
-                          : Icons.visibility_off;
-                    });
-                  },
-                  icon: Icon(icon),
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 50),
+
+                const Icon(
+                  Icons.lock,
+                  size: 50,
+                  color: Color.fromARGB(255, 236, 143, 77),
                 ),
-              ),
+
+                const SizedBox(height: 50),
+
+                Text(
+                  'Hãy tạo một tài khoản nào!',
+                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                ),
+
+                const SizedBox(
+                  height: 25,
+                ),
+
+                MyTextField(
+                  controller: emailController,
+                  hintText: 'Email',
+                  obscureText: false,
+                ),
+
+                const SizedBox(
+                  height: 10,
+                ),
+
+                MyTextField(
+                  controller: passwordController,
+                  hintText: 'Password',
+                  obscureText: true,
+                ),
+
+                const SizedBox(height: 10),
+
+                MyTextField(
+                  controller: confirmPasswordController,
+                  hintText: 'Confirm Password',
+                  obscureText: true,
+                ),
+
+                const SizedBox(height: 25),
+
+                MyButton(
+                  text: "Đăng kí",
+                  onTap: signUserUp,
+                ),
+
+                const SizedBox(height: 50),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          'Or continue with',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 50),
+
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SquareTitle(imagePath: 'images/google.png'),
+                    SizedBox(width: 25),
+                    SquareTitle(imagePath: 'images/apple.png'),
+                  ],
+                ),
+
+                const SizedBox(height: 50),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account?',
+                      style: TextStyle(color: Colors.blueGrey[700]),
+                    ),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: const Text(
+                        'Login now',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
-            const SizedBox(height: 16),
-            const SizedBox(height: 20),
-            // InkWell(
-            //   onTap: (
-                
-            //   ) {
-                
-            //   },
-            //   child: Container(
-            //     padding:
-            //         const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-            //     decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(30),
-            //       color: const Color.fromARGB(255, 236, 143, 77),
-            //     ),
-            //     child: const Text(
-            //       "Đăng kí",
-            //       style: TextStyle(
-            //           color: Colors.white,
-            //           fontSize: 18,
-            //           fontWeight: FontWeight.bold),
-            //     ),
-            //   ),
-            // ),
-          ],
+          ),
         ),
       ),
     );
