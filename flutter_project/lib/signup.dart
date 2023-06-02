@@ -121,7 +121,7 @@ class _SignupState extends State<Signup> {
 
                 MyTextField(
                   controller: passwordController,
-                  hintText: 'Password',
+                  hintText: 'Mật khẩu',
                   obscureText: true,
                 ),
 
@@ -129,7 +129,7 @@ class _SignupState extends State<Signup> {
 
                 MyTextField(
                   controller: confirmPasswordController,
-                  hintText: 'Confirm Password',
+                  hintText: 'Xác nhận mật khẩu',
                   obscureText: true,
                 ),
 
@@ -155,7 +155,7 @@ class _SignupState extends State<Signup> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                          'Or continue with',
+                          'Hoặc',
                           style: TextStyle(color: Colors.grey[700]),
                         ),
                       ),
@@ -186,14 +186,14 @@ class _SignupState extends State<Signup> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      'Đã có tài khoản?',
                       style: TextStyle(color: Colors.blueGrey[700]),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        'Login now',
+                        'Đăng nhập bây giờ',
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.bold),
                       ),

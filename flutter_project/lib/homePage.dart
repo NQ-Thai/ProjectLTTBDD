@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                     Text(
                       "Chào mừng",
                       style: TextStyle(
-                        fontSize: 35,   
+                        fontSize: 35,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),

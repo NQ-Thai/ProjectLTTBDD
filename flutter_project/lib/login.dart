@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() async {
+  void signUserIn() async { 
 
     showDialog(
       context: context,
@@ -114,7 +114,7 @@ class _LoginState extends State<Login> {
           
                 MyTextField(
                   controller: passwordController,
-                  hintText: 'Password',
+                  hintText: 'Mật khẩu',
                   obscureText: true,
                 ),
           
@@ -154,7 +154,7 @@ class _LoginState extends State<Login> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                          'Or continue with',
+                          'Hoặc đăng nhập bằng',
                           style: TextStyle(color: Colors.grey[700]),
                           ),
                       ),
@@ -185,13 +185,13 @@ class _LoginState extends State<Login> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Not a member?',
+                    Text('Không có tài khoản?',
                     style:  TextStyle(color: Colors.blueGrey[700]),),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        'Register now',
+                        'Đăng kí',
                         style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.bold),
                         ),
