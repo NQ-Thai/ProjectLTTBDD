@@ -24,7 +24,18 @@ class _BottomCartSheetState extends State<BottomCartSheet> {
                 child: Column(
                   children: [
                     for (int i = 1; i < 3; i++)
-                      
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 8,
+                              )
                             ]),
                         child: Row(
                           children: [
