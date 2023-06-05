@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/widgets/ProfileScreen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class Drawerr extends StatefulWidget {
@@ -11,8 +12,6 @@ class Drawerr extends StatefulWidget {
 
 class _Drawerr extends State<Drawerr> {
   void _showcreen(var context, var screen) {
-    
-
     Navigator.pop(context);
     Navigator.pushReplacement(
       context,
@@ -31,7 +30,7 @@ class _Drawerr extends State<Drawerr> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-        DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(color: Color.fromARGB(255, 236, 143, 77)),
             child: Center(
               child: Column(
@@ -59,6 +58,12 @@ class _Drawerr extends State<Drawerr> {
             title: const Text('Người dùng'),
             onTap: () {
               // _showcreen(context, ...());
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                  (route) => false);
             },
           ),
           ListTile(

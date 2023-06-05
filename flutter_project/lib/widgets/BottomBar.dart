@@ -12,6 +12,7 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return BottomAppBar(
       child: Container(
+        margin: const EdgeInsets.only(left: 10, right: 10),
         height: 90,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         decoration: const BoxDecoration(
@@ -37,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
                   color: const Color.fromARGB(255, 241, 132, 55),
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Row(
+                child: const Row(
                   children: [
                     Icon(
                       Icons.add_shopping_cart,

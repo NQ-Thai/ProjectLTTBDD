@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/homePage.dart';
 import 'package:flutter_project/widgets/BottomBar.dart';
@@ -74,39 +73,44 @@ class _ItemPageState extends State<ItemPage> {
                           Row(
                             children: [
                               Container(
-                                padding: const EdgeInsets.all(3),
+                                
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(50),
+                              
                                 ),
-                                child: const Icon(CupertinoIcons.minus),
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.remove)),
                               ),
                               Container(
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: const Text(
-                                  "01",
+                                  "0",
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 27,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                               Container(
-                                padding: const EdgeInsets.all(3),
+                                
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(50),
                                 ),
-                                child: const Icon(CupertinoIcons.plus),
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.add)),
                               ),
                             ],
                           )
                         ],
                       ),
                     ),
-                    Row(
+                    const Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 30),
@@ -120,7 +124,7 @@ class _ItemPageState extends State<ItemPage> {
                         ),
                       ],
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
