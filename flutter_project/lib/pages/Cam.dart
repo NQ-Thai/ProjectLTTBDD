@@ -26,7 +26,7 @@ class _CamState extends State<Cam> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/2.png"),
+                    image: AssetImage("assets/images/2.png"),
                   ),
                 ),
                 child: InkWell(

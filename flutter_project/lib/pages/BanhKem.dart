@@ -26,7 +26,7 @@ class _BanhKemState extends State<BanhKem> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/3.png"),
+                    image: AssetImage("assets/images/3.png"),
                   ),
                 ),
                 child: InkWell(
@@ -106,7 +106,7 @@ class _BanhKemState extends State<BanhKem> {
                         ],
                       ),
                     ),
-                    Row(
+                    const Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 30),
@@ -120,7 +120,7 @@ class _BanhKemState extends State<BanhKem> {
                         ),
                       ],
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

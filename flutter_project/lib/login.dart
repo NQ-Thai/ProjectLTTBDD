@@ -173,11 +173,11 @@ class _LoginState extends State<Login> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  SquareTitle(imagePath: 'images/google.png'),
+                  SquareTitle(imagePath: 'assets/images/google.png'),
           
                   SizedBox(width: 25),
           
-                  SquareTitle(imagePath: 'images/apple.png'),
+                  SquareTitle(imagePath: 'assets/images/apple.png'),
                 ],),
           
                 const SizedBox(height: 50),

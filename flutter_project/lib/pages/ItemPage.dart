@@ -25,7 +25,7 @@ class _ItemPageState extends State<ItemPage> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/1.png"),
+                    image: AssetImage("assets/images/1.png"),
                   ),
                 ),
                 child: InkWell(

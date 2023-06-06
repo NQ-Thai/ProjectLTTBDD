@@ -52,7 +52,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
-                        "images/1.png",
+                        "assets/images/1.png",
                         height: 50,
                         width: 50,
                       ),
@@ -88,7 +88,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
-                        "images/2.png",
+                        "assets/images/2.png",
                         height: 50,
                         width: 50,
                       ),
@@ -124,7 +124,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
-                        "images/3.png",
+                        "assets/images/3.png",
                         height: 50,
                         width: 50,
                       ),
@@ -160,7 +160,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
-                        "images/4.png",
+                        "assets/images/4.png",
                         height: 50,
                         width: 50,
                       ),
@@ -196,7 +196,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
-                        "images/5.png",
+                        "assets/images/5.png",
                         height: 50,
                         width: 50,
                       ),

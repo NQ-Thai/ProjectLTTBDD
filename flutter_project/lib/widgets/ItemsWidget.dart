@@ -69,7 +69,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "images/1.png",
+                        "assets/images/1.png",
                         height: 90,
                         width: 90,
                       ),
@@ -147,7 +147,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "images/2.png",
+                        "assets/images/2.png",
                         height: 90,
                         width: 90,
                       ),
@@ -225,7 +225,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "images/3.png",
+                        "assets/images/3.png",
                         height: 90,
                         width: 90,
                       ),
@@ -303,7 +303,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "images/4.png",
+                        "assets/images/4.png",
                         height: 90,
                         width: 90,
                       ),
@@ -381,7 +381,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "images/5.png",
+                        "assets/images/5.png",
                         height: 90,
                         width: 90,
                       ),

@@ -16,7 +16,7 @@ class _StartScreenState extends State<StartScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("images/startScreenn.png", height: 350),
+            Image.asset("assets/images/startScreenn.png", height: 350),
             Container(
               margin: const EdgeInsets.only(top: 50),
               child: const Text(

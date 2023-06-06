@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/widgets/ProfileScreen.dart';
+import 'package:flutter_project/widgets/profile_screen/ProfileScreen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class Drawerr extends StatefulWidget {
@@ -31,13 +31,13 @@ class _Drawerr extends State<Drawerr> {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 236, 143, 77)),
+            decoration: const BoxDecoration(color: Color.fromARGB(255, 236, 143, 77)),
             child: Center(
               child: Column(
                 children: [
                   const CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage('images/startScreenn.png'),
+                    backgroundImage: AssetImage('assets/images/startScreenn.png'),
                     backgroundColor: Color.fromARGB(255, 236, 143, 77),
                   ),
                   const SizedBox(
@@ -46,7 +46,7 @@ class _Drawerr extends State<Drawerr> {
                   Text(
                     '${nameUser?.email}',
                     textScaleFactor: 1.5,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ],
               ),

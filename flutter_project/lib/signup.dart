@@ -174,9 +174,9 @@ class _SignupState extends State<Signup> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquareTitle(imagePath: 'images/google.png'),
+                    SquareTitle(imagePath: 'assets/images/google.png'),
                     SizedBox(width: 25),
-                    SquareTitle(imagePath: 'images/apple.png'),
+                    SquareTitle(imagePath: 'assets/images/apple.png'),
                   ],
                 ),
 

@@ -26,7 +26,7 @@ class _CaChuaState extends State<CaChua> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/5.png"),
+                    image: AssetImage("assets/images/5.png"),
                   ),
                 ),
                 child: InkWell(

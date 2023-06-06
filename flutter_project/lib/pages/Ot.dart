@@ -26,7 +26,7 @@ class _OtState extends State<Ot> {
                 alignment: Alignment.topLeft,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/4.png"),
+                    image: AssetImage("assets/images/4.png"),
                   ),
                 ),
                 child: InkWell(
