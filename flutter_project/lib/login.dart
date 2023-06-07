@@ -9,55 +9,45 @@ class Login extends StatefulWidget {
 
   const Login({Key? key, required this.onTap}) : super(key: key);
 
-  
-
   @override
   State<Login> createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() async { 
-
+  void signUserIn() async {
     showDialog(
       context: context,
       builder: (context) {
         return const Center(
           child: CircularProgressIndicator(),
         );
-    },
-  );
-
-  try {
-    await FirebaseAuth.instance.
-    signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text
+      },
     );
 
-    Navigator.pop(context);
-  } on FirebaseAuthException catch (e) {
-    Navigator.pop(context);
-    showErrorMessage(e.code);
-  }
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
 
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      showErrorMessage(e.code);
+    }
   }
 
   void showErrorMessage(String message) {
     showDialog(
       context: context,
       builder: (context) {
-        return  AlertDialog(
+        return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 236, 143, 77),
           title: Center(
             child: Text(
               message,
-              style: const TextStyle(
-                color: Colors.white
-              ),
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         );
@@ -72,8 +62,10 @@ class _LoginState extends State<Login> {
         return const AlertDialog(
           backgroundColor: Color.fromARGB(255, 236, 143, 77),
           title: Center(
-            child: Text('Sai Mật Khẩu',
-            style: TextStyle(color: Colors.white),),
+            child: Text(
+              'Sai Mật Khẩu',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         );
       },
@@ -109,37 +101,33 @@ class _LoginState extends State<Login> {
                   hintText: 'Email',
                   obscureText: false,
                 ),
-          
-                const SizedBox(height: 10,),
-          
+                const SizedBox(
+                  height: 10,
+                ),
                 MyTextField(
                   controller: passwordController,
                   hintText: 'Mật khẩu',
                   obscureText: true,
                 ),
-          
                 const SizedBox(height: 10),
-          
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('Quên mật khẩu?',
-                      style: TextStyle(color: Colors.grey[600]),),
+                      Text(
+                        'Quên mật khẩu?',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
                     ],
                   ),
                 ),
-          
                 const SizedBox(height: 25),
-          
                 MyButton(
                   text: "Đăng nhập",
                   onTap: signUserIn,
                 ),
-          
                 const SizedBox(height: 50),
-          
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -150,13 +138,12 @@ class _LoginState extends State<Login> {
                           color: Colors.grey[400],
                         ),
                       ),
-                
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           'Hoặc đăng nhập bằng',
                           style: TextStyle(color: Colors.grey[700]),
-                          ),
+                        ),
                       ),
                       Expanded(
                         child: Divider(
@@ -167,38 +154,34 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-          
                 const SizedBox(height: 50),
-          
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  SquareTitle(imagePath: 'assets/images/google.png'),
-          
-                  SizedBox(width: 25),
-          
-                  SquareTitle(imagePath: 'assets/images/apple.png'),
-                ],),
-          
+                    SquareTitle(imagePath: 'assets/images/google.png'),
+                    SizedBox(width: 25),
+                    SquareTitle(imagePath: 'assets/images/apple.png'),
+                  ],
+                ),
                 const SizedBox(height: 50),
-          
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Không có tài khoản?',
-                    style:  TextStyle(color: Colors.blueGrey[700]),),
+                    Text(
+                      'Không có tài khoản?',
+                      style: TextStyle(color: Colors.blueGrey[700]),
+                    ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
                         'Đăng kí',
                         style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                        ),
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 )
-          
               ],
             ),
           ),
