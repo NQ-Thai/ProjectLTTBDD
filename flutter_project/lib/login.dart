@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/components/my_button.dart';
 import 'package:flutter_project/components/my_textfield.dart';
-import 'package:flutter_project/components/square_title.dart';
+import 'package:flutter_project/pages/forgot_pw_page.dart';
 
 class Login extends StatefulWidget {
   final Function()? onTap;
@@ -83,10 +83,9 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
-                const Icon(
-                  Icons.lock,
-                  size: 100,
-                  color: Color.fromARGB(255, 236, 143, 77),
+                Image.asset(
+                  'assets/images/startScreenn.png',
+                  width: 150
                 ),
                 const SizedBox(height: 50),
                 Text(
@@ -115,9 +114,21 @@ class _LoginState extends State<Login> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        'Quên mật khẩu?',
-                        style: TextStyle(color: Colors.grey[600]),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ForgotPasswordPage();
+                              }));
+                        },
+                        child: const Text(
+                          'Quên mật khẩu?',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   ),
@@ -141,7 +152,7 @@ class _LoginState extends State<Login> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                          'Hoặc đăng nhập bằng',
+                          'Hoặc',
                           style: TextStyle(color: Colors.grey[700]),
                         ),
                       ),
@@ -154,15 +165,15 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 50),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SquareTitle(imagePath: 'assets/images/google.png'),
-                    SizedBox(width: 25),
-                    SquareTitle(imagePath: 'assets/images/apple.png'),
-                  ],
-                ),
+                // const SizedBox(height: 50),
+                // const Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     SquareTitle(imagePath: 'assets/images/google.png'),
+                //     SizedBox(width: 25),
+                //     SquareTitle(imagePath: 'assets/images/apple.png'),
+                //   ],
+                // ),
                 const SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

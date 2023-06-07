@@ -45,7 +45,7 @@ class _Drawerr extends State<Drawerr> {
                   ),
                   Text(
                     '${nameUser?.email}',
-                    textScaleFactor: 1.5,
+                    textScaleFactor: 1.3,
                     style: const TextStyle(color: Colors.white),
                   ),
                 ],
