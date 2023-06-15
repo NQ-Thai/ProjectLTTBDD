@@ -60,10 +60,10 @@ const video = "Video",
     sellerPolicy = "Seller Policy",
     returnPolicy = "Return Policy",
     supportPolicy = "Support Policy",
-    productsYouMayLike = "Products You May Like";
+    productsYouMayLike = "Các sản phẩm bạn có thể thích";
 
 //profile strings
-const wishList = "My wishlist", orders = "Oders", message = "Message", oldPass = "Mật khẩu cũ", newPass = "Mật khẩu mới";
+const wishList = "Danh sách yêu thích", orders = "Đơn hàng", message = "Tin nhắn", oldPass = "Mật khẩu cũ", newPass = "Mật khẩu mới";
 
 //payment methods strings
 const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";

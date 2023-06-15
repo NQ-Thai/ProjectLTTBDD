@@ -39,4 +39,56 @@ class FirestorServices {
         .orderBy('created_on', descending: false)
         .snapshots();
   }
+
+  static getAllOrders() {
+    return fireStore
+        .collection(ordersCollection)
+        .where('order_by', isEqualTo: currenUser!.uid)
+        .snapshots();
+  }
+
+  static getWishList() {
+    return fireStore
+        .collection(productsCollection)
+        .where('p_wishlist', arrayContains: currenUser!.uid)
+        .snapshots();
+  }
+
+  static getAllMessages() {
+    return fireStore
+        .collection(chatsCollection)
+        .where('fromId', isEqualTo: currenUser!.uid)
+        .snapshots();
+  }
+
+  static getCounts() async {
+    var res = await Future.wait([
+      fireStore
+          .collection(cartCollection)
+          .where('added_by', isEqualTo: currenUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+      fireStore
+          .collection(productsCollection)
+          .where('p_wishlist', arrayContains: currenUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+      fireStore
+          .collection(ordersCollection)
+          .where('order_by', isEqualTo: currenUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+    ]);
+    return res;
+  }
+
+  static allProductes() {
+    return fireStore.collection(productsCollection).snapshots();
+  }
 }

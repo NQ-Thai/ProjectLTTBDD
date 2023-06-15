@@ -138,7 +138,7 @@ class ItemDetails extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: 100,
-                                child: "Quantity : ".text.color(textfieldGrey).make(),
+                                child: "Số lượng : ".text.color(textfieldGrey).make(),
                               ),
                               Obx(
                                 () => Row(
@@ -174,7 +174,7 @@ class ItemDetails extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: 100,
-                                child: "total: ".text.color(textfieldGrey).make(),
+                                child: "Tổng : ".text.color(textfieldGrey).make(),
                               ),
                               "${controller.totalPrice.value}"
                                   .numCurrency
@@ -192,7 +192,7 @@ class ItemDetails extends StatelessWidget {
                     //description section
                     10.heightBox,
     
-                    "Description"
+                    "Mô tả"
                         .text
                         .color(darkFontGrey)
                         .fontFamily(semibold)
@@ -276,17 +276,22 @@ class ItemDetails extends StatelessWidget {
               child: ourButton(
                   color: redColor,
                   onPress: () {
-                    controller.addToCart(
+                    if (controller.quantity.value > 0) {
+                      controller.addToCart(
                       context: context,
+                      vendorID: data['vendor_id'],
                       img: data['p_imgs'][0],
                       qty: controller.quantity.value,
                       sellername: data['p_seller'],
                       title: data['p_name'],
                       tprice: controller.totalPrice.value);
                     VxToast.show(context, msg: "Thêm vào giỏ hàng");
+                    }else {
+                      VxToast.show(context, msg: "Vui lòng chọn số lượng");
+                    }
                   },
                   textColor: whiteColor,
-                  title: "Add to cart"),
+                  title: "Thêm vào giỏ hàng"),
             )
           ],
         ),
