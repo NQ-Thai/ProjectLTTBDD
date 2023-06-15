@@ -1,0 +1,73 @@
+{
+    "categories": [
+        {
+            "name": "Women Dress",
+            "subcategory": [
+                "Wedding & Event",
+                "Bắp cải",
+                "Rau mồng tơi"
+            ]
+        },
+        {
+            "name": "Men Clothing & Fashion",
+            "subcategory": [
+                "thịt heo",
+                "Thịt bò",
+                "Thịt dê"
+            ]
+        },
+        {
+            "name": "Computer & Accessories",
+            "subcategory": [
+                "Sữa bò",
+                "Sữa socola",
+                "Sữa dâu"
+            ]
+        },
+        {
+            "name": "Automobile",
+            "subcategory": [
+                "Snack",
+                "Bánh kem"
+            ]
+        },
+        {
+            "name": "Kids & Toys",
+            "subcategory": [
+                "kẹo dẽo",
+                "Kẹo socola"
+            ]
+        },
+        {
+            "name": "Sports",
+            "subcategory": [
+                "Sting",
+                "C2",
+                "Pepsi"
+            ]
+        },
+        {
+            "name": "Jewelery",
+            "subcategory": [
+                "Chôm chôm",
+                "Cam",
+                "Táo"
+            ]
+        },
+        {
+            "name": "Cellphone & Tab",
+            "subcategory": [
+                "Nước táo",
+                "Nước cam"
+            ]
+        },
+        {
+            "name": "Furniture",
+            "subcategory": [
+                "Heo hộp",
+                "Cá hộp",
+                "Bò hộp"
+            ]
+        }
+    ]
+}
