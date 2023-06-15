@@ -12,15 +12,15 @@ const featuredTitles1 = [vegatables, girlsDress, girlWatches];
 const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
 
 const categoriesList = [
-  rauTuoi,
-  thitTuoi,
-  sua,
-  banh,
-  keo,
-  nuocNgot,
-  traiCay,
-  nuocTraiCay,
-  thucAnHop
+  womenDress,
+  menClothingFashion,
+  compAccess,
+  automobile,
+  kidtoys,
+  sports,
+  jewelery,
+  cellphone,
+  furniture
 ];
 
 const categoryImages = [

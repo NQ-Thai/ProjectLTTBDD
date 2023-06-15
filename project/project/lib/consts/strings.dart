@@ -44,15 +44,15 @@ const searchAnything = "Tìm kiếm...",
     featuredCategories = "Featured Categories";
 
 //category strings
-const rauTuoi = "Rau tươi",
-    thitTuoi = "Thịt tươi",
-    sua = "Sữa",
-    banh = "Bánh",
-    keo = "Kẹo",
-    nuocNgot = "Nước ngọt",
-    traiCay = "Trái cây",
-    nuocTraiCay = "Nước trái cây",
-    thucAnHop = "Thức ăn hộp";
+const womenDress= "Women Dress",
+    menClothingFashion= "Men Clothing & Fashion",
+    compAccess = "Computer & Accessories",
+    automobile = "Automobile",
+    kidtoys= "Kids & Toys",
+    sports = "Sports",
+    jewelery = "Jewelery",
+    cellphone = "Cellphone & Tab",
+    furniture = "Furniture";
 
 //item details strings
 const video = "Video",
