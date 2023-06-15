@@ -5,6 +5,8 @@ import 'package:project/consts/list.dart';
 import 'package:project/controller/product_controller.dart';
 import 'package:project/views/widgets_common/our_button.dart';
 
+import '../chat_screen/chat_screen.dart';
+
 class ItemDetails extends StatelessWidget {
   final String? title;
   final dynamic data;
@@ -28,8 +30,17 @@ class ItemDetails extends StatelessWidget {
           title: title!.text.color(darkFontGrey).fontFamily(bold).make(),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.share)),
-            IconButton(
-                onPressed: () {}, icon: const Icon(Icons.favorite_outline)),
+            Obx(() =>
+            IconButton(onPressed: () {
+                if (controller.isFav.value) {
+                  controller.removeFromWishList(data.id, context);
+                } else {
+                  controller.addToWishList(data.id,context);
+                }
+              }, icon: Icon(
+                  Icons.favorite,
+                  color: controller.isFav.value ? redColor : darkFontGrey,)),
+            ),
           ],
         ),
         body: Column(
@@ -104,7 +115,11 @@ class ItemDetails extends StatelessWidget {
                         const CircleAvatar(
                           backgroundColor: Colors.white,
                           child: Icon(Icons.message_rounded, color: darkFontGrey),
-                        )
+                        ).onTap(() {
+                          Get.to(() =>const ChatScreen(),
+                          arguments: [data['p_seller'], data['vendor_id']],
+                          );
+                        })
                       ],
                     )
                         .box

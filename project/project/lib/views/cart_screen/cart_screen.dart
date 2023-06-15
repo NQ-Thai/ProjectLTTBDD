@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:project/consts/consts.dart';
 import 'package:project/controller/cart_controller.dart';
 import 'package:project/services/firestore_services.dart';
+import 'package:project/views/cart_screen/shipping_screen.dart';
 import 'package:project/views/widgets_common/loading_indicator.dart';
 import 'package:project/views/widgets_common/our_button.dart';
 
@@ -15,6 +16,17 @@ class CartScreen extends StatelessWidget {
     var controller = Get.put(CartController());
     return Scaffold(
       backgroundColor: whiteColor,
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        child: ourButton(
+          color: redColor,
+          onPress: () {
+            Get.to(() => const ShippingDetails());
+          },
+          textColor: whiteColor,
+          title: "Tiến hành vận chuyển",
+        ),
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: "Giỏ hàng".text.color(darkFontGrey).fontFamily(semibold).make(),
@@ -34,6 +46,7 @@ class CartScreen extends StatelessWidget {
             } else {
               var data = snapshot.data!.docs;
               controller.calculate(data);
+              controller.productSnapshot = data;
 
               return Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -47,11 +60,12 @@ class CartScreen extends StatelessWidget {
                             leading: Image.network(
                               "${data[index]['img']}",
                             ),
-                            title: "${data[index]['title']} (x${data[index]['qty']})"
-                                .text
-                                .fontFamily(semibold)
-                                .size(16)
-                                .make(),
+                            title:
+                                "${data[index]['title']} (x${data[index]['qty']})"
+                                    .text
+                                    .fontFamily(semibold)
+                                    .size(16)
+                                    .make(),
                             subtitle: "${data[index]['tprice']}"
                                 .numCurrency
                                 .text
@@ -60,8 +74,8 @@ class CartScreen extends StatelessWidget {
                                 .make(),
                             trailing: const Icon(Icons.delete, color: redColor)
                                 .onTap(() {
-                                  FirestorServices.deleteDocument(data[index].id);
-                                }),
+                              FirestorServices.deleteDocument(data[index].id);
+                            }),
                           );
                         },
                       ),
@@ -91,14 +105,14 @@ class CartScreen extends StatelessWidget {
                         .roundedSM
                         .make(),
                     10.heightBox,
-                    SizedBox(
-                        width: context.screenWidth - 60,
-                        child: ourButton(
-                          color: redColor,
-                          onPress: () {},
-                          textColor: whiteColor,
-                          title: "Tiến hành vận chuyển",
-                        )),
+                    // SizedBox(
+                    //     width: context.screenWidth - 60,
+                    //     child: ourButton(
+                    //       color: redColor,
+                    //       onPress: () {},
+                    //       textColor: whiteColor,
+                    //       title: "Tiến hành vận chuyển",
+                    //     )),
                   ],
                 ),
               );

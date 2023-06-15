@@ -44,8 +44,8 @@ const searchAnything = "Tìm kiếm...",
     featuredCategories = "Featured Categories";
 
 //category strings
-const womenDress= "Women Dress",
-    menClothingFashion= "Men Clothing & Fashion",
+const womenDress= "Rau",
+    menClothingFashion= "Trứng",
     compAccess = "Computer & Accessories",
     automobile = "Automobile",
     kidtoys= "Kids & Toys",
@@ -64,3 +64,6 @@ const video = "Video",
 
 //profile strings
 const wishList = "My wishlist", orders = "Oders", message = "Message", oldPass = "Mật khẩu cũ", newPass = "Mật khẩu mới";
+
+//payment methods strings
+const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";
