@@ -91,4 +91,20 @@ class FirestorServices {
   static allProductes() {
     return fireStore.collection(productsCollection).snapshots();
   }
+
+  static getSubCategoryProducts(title) {
+    return fireStore
+        .collection(productsCollection)
+        .where('p_subcategory', isEqualTo: title)
+        .snapshots();
+  }
+
+  //get featured products
+  static getFeatureProducts() {
+    return fireStore.collection(productsCollection).where('is_featured', isEqualTo: true).get();
+  }
+
+  static searchProducts(title) {
+    return fireStore.collection(productsCollection).get();
+  }
 }

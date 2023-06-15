@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/consts/consts.dart';
 import 'package:project/consts/list.dart';
+import 'package:project/controller/home_controller.dart';
 import 'package:project/services/firestore_services.dart';
 import 'package:project/views/category_screen/item_details.dart';
 import 'package:project/views/home_screen/components/featured_button.dart';
+import 'package:project/views/home_screen/search_screen.dart';
 import 'package:project/views/widgets_common/home_button.dart';
 import 'package:project/views/widgets_common/loading_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
+  
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    var controller = Get.find<HomeController>();
     return Container(
       padding: const EdgeInsets.all(12),
       color: lightGrey,
@@ -27,15 +32,21 @@ class HomeScreen extends StatelessWidget {
               height: 60,
               color: lightGrey,
               child: TextFormField(
-                decoration: const InputDecoration(
+                controller: controller.searchController,
+                decoration: InputDecoration(
                   border: InputBorder.none,
-                  suffixIcon: Icon(Icons.search),
+                  suffixIcon:const Icon(Icons.search).onTap(() {
+                    if(controller.searchController.text.isNotEmptyAndNotNull) {
+                      Get.to(() => SearchScreen(title: controller.searchController.text,));
+                    }
+                    
+                  }),
                   filled: true,
                   fillColor: whiteColor,
                   hintText: searchAnything,
-                  hintStyle: TextStyle(color: textfieldGrey),
+                  hintStyle: const TextStyle(color: textfieldGrey),
                 ),
-              ),
+              ).box.outerShadowSm.make(),
             ),
             10.heightBox,
             Expanded(
@@ -160,38 +171,68 @@ class HomeScreen extends StatelessWidget {
                           10.heightBox,
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: List.generate(
-                                  6,
-                                  (index) => Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Image.asset(imgP1,
-                                              width: 150, fit: BoxFit.cover),
-                                          10.heightBox,
-                                          "Rau"
-                                              .text
-                                              .fontFamily(semibold)
-                                              .color(darkFontGrey)
-                                              .make(),
-                                          10.heightBox,
-                                          "150.000"
-                                              .text
-                                              .color(redColor)
-                                              .fontFamily(bold)
-                                              .size(16)
-                                              .make(),
-                                        ],
-                                      )
-                                          .box
-                                          .white
-                                          .margin(const EdgeInsets.symmetric(
-                                              horizontal: 4))
-                                          .roundedSM
-                                          .padding(const EdgeInsets.all(8))
-                                          .make()),
-                            ),
+                            child: FutureBuilder(
+                                future: FirestorServices.getFeatureProducts(),
+                                builder: (context,
+                                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: loadingIndicator(),
+                                    );
+                                  } else if (snapshot.data!.docs.isEmpty) {
+                                    return "Khong co san pham"
+                                        .text
+                                        .white
+                                        .makeCentered();
+                                  } else {
+                                    var featuredData = snapshot.data!.docs;
+
+                                    return Row(
+                                      children: List.generate(
+                                          featuredData.length,
+                                          (index) => Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Image.network(
+                                                      featuredData[index]
+                                                          ['p_imgs'][0],
+                                                      width: 130,
+                                                      height: 130,
+                                                      fit: BoxFit.cover),
+                                                  10.heightBox,
+                                                  "${featuredData[index]['p_name']}"
+                                                      .text
+                                                      .fontFamily(semibold)
+                                                      .color(darkFontGrey)
+                                                      .make(),
+                                                  10.heightBox,
+                                                  "${featuredData[index]['p_price']}"
+                                                      .numCurrency
+                                                      .text
+                                                      .color(redColor)
+                                                      .fontFamily(bold)
+                                                      .size(16)
+                                                      .make(),
+                                                ],
+                                              )
+                                                  .box
+                                                  .white
+                                                  .margin(const EdgeInsets
+                                                      .symmetric(horizontal: 4))
+                                                  .roundedSM
+                                                  .padding(
+                                                      const EdgeInsets.all(8))
+                                                  .make().onTap(() {
+                                                    Get.to(() => ItemDetails(
+                                          title:
+                                              "${featuredData[index]['p_name']}",
+                                          data: featuredData[index],
+                                                    ));
+                                                  })),
+                                    );
+                                  }
+                                }),
                           ),
                         ],
                       ),
@@ -219,8 +260,8 @@ class HomeScreen extends StatelessWidget {
                     20.heightBox,
                     StreamBuilder(
                         stream: FirestorServices.allProductes(),
-                        builder:
-                            (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                        builder: (BuildContext context,
+                            AsyncSnapshot<QuerySnapshot> snapshot) {
                           if (!snapshot.hasData) {
                             return loadingIndicator();
                           } else {
@@ -241,7 +282,8 @@ class HomeScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Image.network(allproductsdata[index]['p_imgs'][0],
+                                      Image.network(
+                                          allproductsdata[index]['p_imgs'][0],
                                           height: 200,
                                           width: 200,
                                           fit: BoxFit.cover),
@@ -266,9 +308,14 @@ class HomeScreen extends StatelessWidget {
                                           horizontal: 4))
                                       .roundedSM
                                       .padding(const EdgeInsets.all(12))
-                                      .make().onTap(() {
-                                        Get.to(() => ItemDetails(title: "${allproductsdata[index]['p_name']}", data: allproductsdata[index],));
-                                      });
+                                      .make()
+                                      .onTap(() {
+                                    Get.to(() => ItemDetails(
+                                          title:
+                                              "${allproductsdata[index]['p_name']}",
+                                          data: allproductsdata[index],
+                                        ));
+                                  });
                                 });
                           }
                         })
